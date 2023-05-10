@@ -1,0 +1,7 @@
+img{
+    width:20%;
+}
+.menus{
+    display:grid;
+    grid-template-columns: auto auto;
+}

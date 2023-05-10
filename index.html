@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bottega Menu Diner</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    
+</body>
+</html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>BIENVENIDO A BOTTEGA DINER</h1>
+       <hr>
+<div class="menus">
+<H2>Menú principal</H2>
+
+
+
+
+
+<div class="menuCompleto">
+<h2>Menú completo</h2>
+<script>
+    function saludo(){
+        var ul=document.createElement('ul');
+        document.body.appendChild(ul);
+        for(i=0;i<5;i++)
+    {
+        var li=document.createElement('li');
+        li.innerHTML="<a href=''>Somelink</a>"+" "+"Sometext";
+        ul.appendChild(li);
+    }
+    document.getElementById('twitter_status').appendChild(ul);
+    }
+</script>
+<h5>Desayunos</h5>
+    <div class="opcionesDesayuno">
+<label><input type="checkbox" id="cbox1" name="first_checkbox">Aceite</label><br>
+        <label><input type="checkbox" id="cbox1" name="first_checkbox">Mantequilla con mermelada</label><br>
+        <label><input type="checkbox" id="cbox1" name="first_checkbox">Tomate natural</label><br>
+        <label><input type="checkbox" id="cbox1" name="first_checkbox">Churros</label><br>
+        <label id="importeDesayuno">Importe 15€</label>
+    </div>
+ <div class="menuAlmuerzo">Almuerzo<br>
+
+    <label><input type="checkbox" id="cbox1" value=10 name="second_checkbox">Croqueta de brocoli</label>&nbsp;<label id="precioAlcbox1">10</label><label>€</label><br>
+    <label><input type="checkbox" id="cbox2" value=17 name="second_checkbox">Rollito Thai</label>&nbsp;<label id="precioAlcbox2">17€</label><br>
+    <label><input type="checkbox" id="cbox3" value=9 name="second_checkbox">Ensalada de temporada</label>&nbsp;<label id="precioAlcbox3">9€</label><br>
+    <label><input type="checkbox" id="cbox4" value=40 name="second_checkbox">Albóndigas de champis</label>&nbsp;<label id="precioAlcbox4">40€</label><br>
+    <label><input type="checkbox" id="cbox5" value=20 name="second_checkbox">Burguer de remolacha</label>&nbsp;<label id="precioAlcbox5">20€</label><br>
+
+</div>
+<div class="menuCena">Cena<br>
+    <label><input type="checkbox" id="cbox1" value=5 name="third_checkbox">Croqueta de brocoli&nbsp;<label id="precioCenacbox1">5€</label></label><br>
+    <label><input type="checkbox" id="cbox1" value=7 name="third_checkbox">Rollito Thai</label>&nbsp;<label id="precioCenacbox2">7€</label><br>
+    <label><input type="checkbox" id="cbox1" value=30 name="third_checkbox">Ensalada de temporada</label>&nbsp;<label id="precioCenacbox3">30€</label><br>
+    <label><input type="checkbox" id="cbox1" value=16 name="third_checkbox">Albóndigas de champis</label>&nbsp;<label id="precioCenacbox4">16€</label><br>
+    <label><input type="checkbox" id="cbox1" value=25 name="third_checkbox">Burguer de remolacha</label>&nbsp;<label id="precioCenacbox5">25</label><br>
+
+</div>    
+   
+</div>
+
+
+
+<script>
+    var platos = [
+  {
+    Contador: 1,
+    Photo:
+      "https://www.clara.es/medio/2019/03/05/recetas-vegetarianas-arroz-tofu-verduras_236a0dad_700x1049.jpg",
+    Name: "Veggie Pit Beans",
+    Price: 15,
+    Select: false
+  },
+  {
+    Contador: 2,
+    Photo:
+      "https://www.clara.es/medio/2019/03/05/receta-cuscus-brocoli-germinados_8840419c_1000x1500.jpg",
+    Name: "Coleslaw",
+    Price: 20,
+    Select: false
+  },
+  {
+    Contador: 3,
+    Photo:
+      "https://www.clara.es/medio/2019/03/05/recetas-vegetarianas-espirales-setas-verduras_06196391_700x1049.jpg",
+    Name: "Garlic Bread",
+    Price: 10,
+    Select: false
+  }
+];
+for (let plato in platos) {
+  var contador = platos[plato].Contador;
+  var nombreChek = "myCheck" + contador;
+  content = document.createElement("div");
+  var myCheck = document.createElement("input");
+  var label = document.createElement("label");
+  var img = document.createElement("img");
+  img.src = platos[plato].Photo;
+  label.innerHTML = "Añadir";
+  myCheck.type = "checkbox";
+  myCheck.id = nombreChek;
+  myCheck.name = "miCheck";
+  myCheck.className = "myClass";
+  var name = platos[plato].Name;
+  var price = platos[plato].Price;
+  content.textContent = name + " " + price + " €";
+  document.body.appendChild(content);
+  document.body.appendChild(img);
+  document.body.appendChild(myCheck);
+  document.body.appendChild(label);
+}
+//Comentarios que saltan al azar cuando se seleccionan los platos
+
+let comentarios = [
+  "Buena elección",
+  "Con éste plato se chupará los dedos",
+  "Disfruta de tu comida",
+  "En familia mucho  mejor",
+  "Platos vegggie exquisitos",
+  "Manos a la masa",
+  "Se me hace la boca agua",
+  "Exquisito!!!",
+  "Su elección es tentadora",
+  "Em mejor plato de nuestro menú"
+];
+
+var checkboxes = document.querySelectorAll(
+  "input[type=checkbox][name=miCheck]"
+); //Seleccionar todos los checkbox con el nombre miCheck y los guardo en variable checkboxes
+checkboxes.forEach(function (checkbox) {
+  checkbox.addEventListener("change", function () {
+    var allChecked = [];
+
+    if (checkbox.checked) {
+      allChecked.push(checkbox.id);
+      let resultado = Math.floor(Math.random() * 10);
+      alert(comentarios[resultado]);
+    }
+  });
+});
+//BOTÓN PULSADO SELECCIONADO
+var totalPrecios = [];
+function alertaValue() {
+  console.log("Button añadir pulsado");
+  var allChecked = [
+    ...document.querySelectorAll("input[name=miCheck][type=checkbox]:checked ")
+  ].map((e) => e.id);
+  console.log(allChecked); //Muestra los checkbox seleccionados
+
+  for (x in allChecked) {
+    var cortarID = allChecked[x];
+    cortarID = cortarID.substring(7);
+    console.log(cortarID); //1
+    var coincide = platos.filter((element) => element.Contador == cortarID);
+    console.log(coincide); //Matriz con la posición cero
+    var resultado = coincide[0].Price;
+    console.log(resultado); //15
+    totalPrecios.push(resultado);
+    const sumaTotal = totalPrecios.reduce((accumulated, currentValue) => {
+      return accumulated + currentValue;
+    });
+    // sumaTotal+=sumaTotalSuplementos;
+    document.getElementById("resultado").innerHTML = sumaTotal; //Introduzco el resultado de la suma en el elemento con div resultado
+  }
+}
+
+//CÓDIGO PERSONALIZAR BEBIDAS
+
+function personalizar() {
+  let bebidas = prompt(
+    "Quieres añadir bebidas a tu menú? (Coca-Cola, Pepsi, Sprite, Cerveza)",
+    "Coca-Cola"
+  );
+  switch (bebidas) {
+    case "Coca-Cola":
+      text =
+        "Excelente elección!, la coca-cola es el lado feliz de la vida. Su precio es de 4€";
+      Precio = 4;
+      break;
+    case "pepsi":
+      text = "Pepsi es mi favorita también!. Su precio es de 3€";
+      Precio = 3;
+      break;
+    case "sprite":
+      text = "Que rica, la tenemos a 2€";
+      Precio = 2;
+      break;
+    case "cerveza":
+      text = "Una vida de burbujas. Precio 2€";
+      Precio = 2;
+      break;
+    default:
+      text = "Nunca he oido hablar de esa bebida..";
+  }
+  alert(text);
+  alert(
+    "Esta bebida tiene un valor de" +
+      Precio +
+      " €, que añadiremos a su importe total"
+  );
+  totalSuplementos.push(Precio);
+  let sumaTotalSuplementos = totalSuplementos.reduce(
+    (accumulator, currentValue) => accumulator + currentValue
+  );
+  document.getElementById("suplementos").innerHTML = sumaTotalSuplementos;
+}
+//Checkbox menú completo. Sección desayuno
+var checkboxAl = document.getElementsByName("first_checkbox");
+
+checkboxAl.forEach(function (checkb) {
+  checkb.addEventListener("change", validaCheckbox, false);
+  function validaCheckbox() {
+    var checked = checkb.checked;
+    if (checked) {
+      alert("Añadiremos 15€ a su importe");
+      totalSuplementos.push(15);
+      let sumaTotalSuplementos = totalSuplementos.reduce(
+        (accumulator, currentValue) => accumulator + currentValue
+      );
+
+      document.getElementById("suplementos").innerHTML = totalSuplementos;
+    }
+  }
+});
+//Sección almuerzo
+var totalSuplementos = [];
+var checkboxAlCena = document.getElementsByName("second_checkbox");
+checkboxAlCena.forEach(function (checkb) {
+  checkb.addEventListener("change", function () {
+    if (checkb.checked) {
+      alert("Añadiremos a su importe total " + checkb.value + " €");
+      let precio = parseInt(checkb.value);
+      totalSuplementos.push(precio);
+      let sumaTotalSuplementos = totalSuplementos.reduce(
+        (accumulator, currentValue) => accumulator + currentValue
+      );
+
+      document.getElementById("suplementos").innerHTML = sumaTotalSuplementos;
+    }
+  });
+});
+
+//Sección cena
+var checkboxAlCena = document.getElementsByName("third_checkbox");
+checkboxAlCena.forEach(function (checkb) {
+  checkb.addEventListener("change", function () {
+    if (checkb.checked) {
+      alert("Añadiremos a su importe total " + checkb.value + " €");
+      let precio = parseInt(checkb.value);
+      totalSuplementos.push(precio);
+      let sumaTotalSuplementos = totalSuplementos.reduce(
+        (accumulator, currentValue) => accumulator + currentValue
+      );
+      document.getElementById("suplementos").innerHTML = sumaTotalSuplementos;
+    }
+  });
+});
+
+</script>
+</div>
+<br>
+<a href="#" onclick="personalizar();"><span>PERSONALIZA TUS PLATOS!!</span></a>
+
+<br/> <br>
+<input type="button" value="Añadir" onclick="alertaValue()">
+    <br> <br>
+
+    <label>Importe total:</label>
+  <div class="resultado" id="resultado"></div>
+  <label>Total Suplementos:</label>
+  <div class="suplementos" id="suplementos"></div>
+
+<div class="total">
+
+</div>
+</body>
+</html>
